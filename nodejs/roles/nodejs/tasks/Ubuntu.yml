@@ -1,0 +1,12 @@
+---  
+
+#If we install in ubuntu 16 then we have to install python 
+
+- name: install
+  apt:
+     name: nodejs
+
+#After installation to check the version we run this
+- name: Check the node version
+  raw: node -v
+  register: output

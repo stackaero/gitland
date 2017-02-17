@@ -1,0 +1,19 @@
+#downloading rpm file from the third party
+- name: get epel
+  command: wget http://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm 
+  
+ # installing the rpm file 
+- name: install
+  yum:
+     name=epel-release-latest-7.noarch.rpm 
+     
+# After installing rpm file then install nodejs and enable repo of epel package 
+    
+- name: Install node js latest version
+  package:
+        name: nodejs
+        enablerepo: epel
+        state: latest
+        
+
+
